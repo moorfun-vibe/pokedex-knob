@@ -1,0 +1,6 @@
+# Pokémon-Inhalte gehoeren NICHT ins oeffentliche Git -
+# Firmware-Bins (mit eingebackenen Pokedex-Texten) + Audio nur als Release-Asset.
+**/firmware/
+**/content/audio/
+*.zip
+.DS_Store
