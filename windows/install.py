@@ -39,6 +39,15 @@ MKLITTLEFS = BIN / ("mklittlefs.exe" if WIN else "mklittlefs")
 
 ESP_VID = 0x303A   # Espressif USB Vendor ID
 
+def dequarantine(path: Path):
+    """macOS setzt heruntergeladene Dateien in Quarantaene. Gatekeeper killt
+    unsignierte Binaries dann mit SIGKILL. Attribut entfernen, damit das
+    mitgelieferte mklittlefs laufen kann."""
+    if sys.platform != "darwin":
+        return
+    subprocess.run(["xattr", "-d", "com.apple.quarantine", str(path)],
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
 # ---- 1) Port suchen ----------------------------------------------------------
 def find_port(timeout_s: int = 90) -> str:
     from serial.tools import list_ports
@@ -122,6 +131,7 @@ def build_littlefs() -> Path:
         shutil.copy(f, root / "icons" / f.name)
 
     out = CACHE / "littlefs.bin"
+    dequarantine(MKLITTLEFS)
     cmd = [str(MKLITTLEFS), "-c", str(root), "-p", "256", "-b", "4096",
            "-s", "0xCE0000", str(out)]
     try:

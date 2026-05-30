@@ -2,6 +2,10 @@
 # Pokedex Knob Installer - Mac. Doppelklick.
 cd "$(dirname "$0")"
 
+# macOS setzt heruntergeladene Dateien in Quarantaene -> Gatekeeper killt das
+# unsignierte mklittlefs mit SIGKILL. Quarantaene vom ganzen Ordner entfernen.
+xattr -dr com.apple.quarantine . >/dev/null 2>&1
+
 PYTHON=""
 for c in python3 /usr/bin/python3 /opt/homebrew/bin/python3 /usr/local/bin/python3; do
     command -v "$c" >/dev/null 2>&1 && { PYTHON="$c"; break; }
