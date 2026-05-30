@@ -12,6 +12,15 @@ Bastelprojekt für Kinder.
 
 ---
 
+## Demo
+
+| Pokéball-Start | Durchblättern + LED | Pokédex-Karte |
+|:---:|:---:|:---:|
+| ![Boot-Animation](media/boot.gif) | ![Durchblättern](media/navigation.gif) | ![Pokédex-Karte](media/pokedexcard.gif) |
+| Pokéball-Animation beim Einschalten | Drehrad blättert, LED-Ring in Typ-Farbe | Antippen → Taler dreht zur Stats-Karte |
+
+---
+
 ## Was es kann
 - Alle **151 Pokémon** — Drehrad blättert durch
 - **Antippen** dreht das Pokémon wie einen Taler → Pokédex-Karte mit Typ, Größe,
