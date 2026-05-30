@@ -49,12 +49,30 @@ Entpacke die ZIP.
 Per USB-C an den Computer.
 
 ### 3. Installer starten
-- **Mac:** Doppelklick auf `Pokedex-Installer.command`
-  *(Beim ersten Mal evtl. Rechtsklick → „Öffnen", um Gatekeeper zu bestätigen.)*
+- **Mac:** Doppelklick auf `Pokedex-Installer.command` (siehe macOS-Hinweis unten)
 - **Windows:** Doppelklick auf `Pokedex-Installer.bat`
 
 Der Installer richtet sich beim ersten Lauf selbst ein, lädt die Bilder, baut das
 Inhalts-Image und flasht alles. Dauert ein paar Minuten.
+
+> #### 🍎 macOS-Sicherheit (Gatekeeper)
+> macOS lässt nicht-signierte Skripte erst nach Bestätigung zu. Du musst das
+> **nur einmal** machen — danach läuft der Installer normal per Doppelklick.
+>
+> **Weg 1 – Rechtsklick:** Rechtsklick auf `Pokedex-Installer.command` →
+> **Öffnen** → im Dialog nochmal **Öffnen**.
+>
+> **Weg 2 – falls weiterhin blockiert (macOS 15 Sequoia / neuer):**
+> 1. Doppelklick (wird geblockt) — Dialog wegklicken
+> 2. **Systemeinstellungen → Datenschutz & Sicherheit**
+> 3. Ganz unten: *„… wurde blockiert"* → **„Trotzdem öffnen"** → mit Passwort/Touch ID bestätigen
+> 4. Nochmal Doppelklick → **Öffnen**
+>
+> **Weg 3 – Terminal (klappt immer):** Terminal öffnen und eintippen:
+> ```
+> bash ~/Downloads/pokedex-installer-mac/Pokedex-Installer.command
+> ```
+> (Pfad ggf. anpassen, je nachdem wohin du die ZIP entpackt hast.)
 
 ### 4. Nur beim allerersten Mal: HID ausschalten
 Ein **fabrikneuer** Knob läuft mit Werks-Firmware und meldet sich am USB als
