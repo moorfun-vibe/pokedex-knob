@@ -153,10 +153,29 @@ def flash(port: str, lfs_bin: Path):
         sys.exit(e.returncode)
     ok("Geflasht. Geraet startet neu.")
 
+# ---- Paket-Pruefung ----------------------------------------------------------
+def check_package():
+    """Stellt sicher, dass Firmware + Audio dabei sind. Wenn nicht, hat der
+    Nutzer vermutlich den Quellcode (Code -> Download ZIP) statt des
+    Release-Pakets geladen."""
+    needed = [FW / "app.bin", FW / "bootloader.bin", CT / "audio" / "de"]
+    if all(x.exists() for x in needed):
+        return
+    err("Dieses Paket ist unvollstaendig (Firmware/Audio fehlen).")
+    p("")
+    p(f"{C.Y}Du hast vermutlich den QUELLCODE geladen (gruener 'Code'-Button).{C.X}")
+    p("Der lauffaehige Installer ist das Release-Paket:")
+    p(f"{C.B}  https://github.com/moorfun-vibe/pokedex-knob/releases/latest{C.X}")
+    p("  -> dort 'pokedex-installer-mac.zip' (bzw. -windows.zip) laden,")
+    p("     entpacken und DARAUS den Installer starten.")
+    p("")
+    sys.exit(5)
+
 # ---- main --------------------------------------------------------------------
 def main():
     p(f"{C.B}== Pokedex Installer =={C.X}")
     p(f"{C.D}System: {platform.system()} | Cache: {CACHE}{C.X}")
+    check_package()
     port    = find_port()
     fetch_images()
     lfs_bin = build_littlefs()

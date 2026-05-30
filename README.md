@@ -39,11 +39,16 @@ Bastelprojekt für Kinder.
 ## Installation
 
 ### 1. Herunterladen
-Lade das passende Paket von der [**Releases-Seite**](../../releases):
+Lade das passende **fertige Installer-Paket** von der
+[**Releases-Seite**](../../releases/latest) herunter:
 - `pokedex-installer-mac.zip`
 - `pokedex-installer-windows.zip`
 
 Entpacke die ZIP.
+
+> ⚠️ **Wichtig:** Nimm die ZIP von der **Releases-Seite** — nicht den grünen
+> **„Code“ → „Download ZIP“**-Button oben. Der lädt nur den Quellcode **ohne
+> Firmware und Audio**, damit funktioniert der Installer nicht.
 
 ### 2. Knob anstecken
 Per USB-C an den Computer.
