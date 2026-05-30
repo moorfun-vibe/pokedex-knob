@@ -22,7 +22,7 @@ Bastelprojekt für Kinder.
 ## Was du brauchst
 1. **Guition ESP32-S3 Knob 1.8″** (Modell JC3636K718C, rundes 360×360-Display
    mit Drehrad + LED-Ring)
-   → *Bezugsquelle:* `<DEIN-AFFILIATE-LINK>`
+   → **[Hier erhältlich auf AliExpress](https://s.click.aliexpress.com/e/_c41cmOC5)** *(Werbung · Affiliate-Link)*
 2. Ein **USB-C-Datenkabel** (kein reines Ladekabel!)
 3. Einen **Mac** oder **Windows-PC** mit Internet (für den einmaligen Bild-Download)
 
